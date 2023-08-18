@@ -10,12 +10,13 @@
 <h1>Math Analyzer</h1>
 <form action="/action_page.php">
   <label for="myfile">Select a file:</label>
-  <input type="file" id="myfile" name="myfile"><br><br>
+  <input type="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" id="myfile" name="myfile" /><br><br>
   <input type="submit">
 </form>
 <py-script>
   import openpyxl
-  path = document.getElementById("myfile").innerHTML
+    
+  path = document.getElementById("myfile")
   wb_obj = openpyxl.load_workbook(path)
  
   sheet_obj = wb_obj.active
